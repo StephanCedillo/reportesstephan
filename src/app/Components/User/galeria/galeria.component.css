@@ -1,0 +1,182 @@
+
+@font-face {
+    font-family: 'HelloNote';
+    src: url('../../../../../public/assets/fonts/Hello\ Note.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+
+    font-family: 'HelloNote';
+}
+
+.lookbook-gallery {
+  margin-top: 6rem;
+    .a11y-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+    .a11y-only.focusable:active,
+    .a11y-only.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+    img {
+    height: 100%;
+    min-width: 10em;
+    max-width: 100%;
+    display: block;
+    background: #ddd;
+  }
+    .model {
+    margin: 0;
+    position: relative;
+    
+    .model--caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      background-color: rgba(0,0,0,.85);
+      padding: .35em 1.2em .25em .9em;
+      justify-self: start;
+      
+      .model-hed {
+        font-size: 0.2em;
+        margin: .5em 0;
+        font-family: 'HelloNote';
+        
+        a {
+          color: #fff;
+          text-decoration-color: rgba(255,255,255,.5);
+        }
+      }
+      p {
+        color: #fff;
+        line-height: 1.5;
+        margin: 0 0 .5em 0;
+      }
+    }
+  }
+    @media( min-width: 45em ) {
+    .lookbook-grid {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .model {
+      flex: 47.5%;
+      margin: .5%;
+    }
+    }
+    @media( min-width: 65em ) {
+    .model {
+      flex: 24.25% 0;
+      margin: .25%;
+    }
+    @supports( display: grid ) {
+      .lookbook-grid {
+        display: grid;
+        grid-gap: .5em;
+        grid-template-columns: repeat( 4, minmax( 200px, 1fr ) );
+      }
+      .model {
+        margin: 0;
+      }
+      .model:nth-of-type(4n-1) {
+        grid-row-end: span 2;
+        grid-column-end: span 2;
+      }
+    }
+    }
+  }
+  h1 {
+    color:#c00;
+    font-size:0.1em;
+    margin-bottom:0;
+  }
+  
+  table {  
+    width: 100%;
+    th, td {
+      padding:.5em .0.2em;
+      text-align:left;
+      &:nth-child(2) {
+        text-align:right;
+      }
+    }
+    td {
+    
+    font-size: 0.7em;
+      background-color:#eeeeee46;    
+    }
+    
+  }
+  .model--caption {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 7px;
+    width: 90%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+ 
+}
+
+.status {
+    font-weight: bold;
+    color: rgb(0, 197, 0);
+}
+
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    font-family: HelloNote;
+    border: none;
+    padding: 6px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.6em;
+}
+
+.details-btn {
+    width: 50%;
+    background: #007bff;
+    color: white;
+}
+
+.details-btn:hover {
+   
+    background: #0056b3;
+}
+
+.delete-btn {
+    width: 50%;
+    background: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #a71d2a;
+}
+.alert{
+    font-size: 0.7em;
+}

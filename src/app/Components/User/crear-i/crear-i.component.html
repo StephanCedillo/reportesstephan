@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="card">
+
+			<app-camera class="camera" (photoCaptured)="onPhotoCaptured($event)"></app-camera>
+
+		<form class="card-form" (ngSubmit)="uploadPhoto()">
+			<div class="input">
+				<input type="text" class="input-field" [(ngModel)]="photoData.title" name="title" required/>
+				<label class="input-label">Nombre</label>
+			</div>
+
+			<div class="input">
+				<input type="text" class="input-field" [(ngModel)]="photoData.team" name="team" required/>
+				<label class="input-label">Equipo</label>
+			</div>
+
+			<div class="input">
+				<input type="text" class="input-field" [(ngModel)]="photoData.description" name="description" required/>
+				<label class="input-label">Descripción</label>
+			</div>
+			<div class="input">
+				<select [(ngModel)]="photoData.isActive" name="isActive" required>
+					<option [ngValue]="null">Seleccionar Estado</option>
+					<option [ngValue]="true">Activo</option>
+					<option [ngValue]="false">Inactivo</option>
+				  </select>
+				  
+			  </div>
+			  
+
+			<div class="action">
+				<button type="submit" class="action-button" >Subir Archivo</button>
+			</div>
+		</form>
+
+	</div>
+</div>

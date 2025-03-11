@@ -1,0 +1,28 @@
+<div class="filtros">
+  <label>
+    <input 
+      type="text" 
+      placeholder="Buscar por título" 
+      [(ngModel)]="searchTitle">
+  </label>
+  <label>
+    <input 
+      type="text" 
+      placeholder="Buscar por descripción" 
+      [(ngModel)]="searchDescription">
+  </label>
+  <label>
+    <input 
+      type="date" 
+      [(ngModel)]="searchDate">
+  </label>
+  <label>
+    <select [(ngModel)]="searchIsActive">
+      <option value="">Seleccionar Estado</option>
+      <option value="true">Activo</option>
+      <option value="false">Inactivo</option>
+    </select>
+  </label>
+  <button type="button" (click)="applyFilters()">Aplicar Filtros</button>
+  <button type="button" (click)="deleteFilters()">Eliminar Filtros</button>
+</div>

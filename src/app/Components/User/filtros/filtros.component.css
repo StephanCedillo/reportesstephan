@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap');
+
+* {
+    font-family: 'Saira Semi Condensed', sans-serif;
+    transition: all .5s ease;
+}
+
+body {
+    background: #dfdfdf;
+    margin: 0;
+    padding: 0;
+}
+
+.filtros {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 3rem; /* Ajustar el margen superior para alejarse del navbar */
+    align-items: center; /* Centra los elementos */
+    justify-content: center;
+    padding: 1rem; /* Añadido padding para espaciado */
+    min-height: 100vh; /* Ocupa todo el alto de la pantalla */
+    box-sizing: border-box; /* Asegura que el padding no altere el tamaño total */
+}
+
+.filtros label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; /* Mayor espacio en pantallas grandes */
+    text-align: center; /* Centrar texto dentro de las etiquetas */
+}
+
+.filtros input,
+.filtros select {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+    margin-top: 0.5rem;
+    transition: border 0.3s ease;
+    background: rgba(255, 255, 255, .5); /* Fondo suave */
+}
+
+.filtros input:focus,
+.filtros select:focus {
+    border-color: #6658d3; /* Color del borde al enfocarse */
+    outline: none;
+    background: rgba(255, 255, 255, 1); /* Fondo al enfocarse */
+}
+
+.filtros input::placeholder,
+.filtros select option {
+    color: #8597a3; /* Color del placeholder */
+}
+
+button {
+    background: #b10d08;
+    padding: 8px 16px;
+    margin-top: 1rem;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #930606; /* Color del fondo al hacer hover */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Estilo de la sección de filtros cuando se aplican cambios */
+.filtros label i {
+    margin-right: 10px;
+}
+
+/* Responsividad: Cambiar a flex-wrap y horizontal en pantallas pequeñas */
+@media (max-width: 768px) {
+    .filtros {
+        flex-direction: row; /* Cambiar a horizontal en pantallas pequeñas */
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .filtros label {
+        width: 90%; /* Hacer los elementos más pequeños y organizados en 2 columnas */
+    }
+
+    .filtros input,
+    .filtros select {
+        padding: 10px 10px 10px 10px;
+        width: 100%; /* Ajustar los inputs para que ocupen el 100% del contenedor */
+    }
+}
