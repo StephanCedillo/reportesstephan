@@ -35,6 +35,8 @@ export class PhotoService {
   getPhotoById(id: string): Photo | null {
     return this.photos.find(photo => photo.id === id) || null; // Asegúrate de que 'id' sea un campo único en tu modelo
   }
+  
+
   updatePhoto(updatedPhoto: Photo): void {
     const index = this.photos.findIndex(photo => photo.id === updatedPhoto.id);
     if (index !== -1) {

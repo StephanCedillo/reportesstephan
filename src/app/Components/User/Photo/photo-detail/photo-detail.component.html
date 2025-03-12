@@ -1,0 +1,42 @@
+<div class="photo-detail">
+    <h2>{{ photoSelected?.title }}</h2>
+    
+    <!-- Mostrar formulario para editar la foto -->
+    <div *ngIf="isEditing; else viewMode">
+      <!-- Formulario de edición -->
+      <form (ngSubmit)="onSubmit()">
+        <label for="title">Título:</label>
+        <input type="text" id="title" [(ngModel)]="tempTitle" name="title" required />
+        
+        <label for="description">Descripción:</label>
+        <textarea id="description" [(ngModel)]="tempDescription" name="description" required></textarea>
+  
+        <label for="team">Equipo:</label>
+        <input type="text" id="team" [(ngModel)]="tempTeam" name="team" required />
+        
+        <label for="isActive">Estado:</label>
+        <select id="isActive" [(ngModel)]="tempIsActive" name="isActive">
+          <option [ngValue]="true">Activo</option>
+          <option [ngValue]="false">Inactivo</option>
+        </select>
+        
+        <button type="submit">Guardar cambios</button>
+        <button type="button" (click)="cancelEdit()">Cancelar</button>
+      </form>
+    </div>
+  
+    <!-- Vista previa de la foto (si no está en modo edición) -->
+    <ng-template #viewMode>
+      <p><strong>Descripción:</strong> {{ photoSelected?.description }}</p>
+      <p><strong>Equipo:</strong> {{ photoSelected?.team }}</p>
+      <p><strong>Fecha:</strong> {{ photoSelected?.createdAt | date: 'dd/MM/yyyy HH:mm' }}</p>
+      <p><strong>Estado:</strong> {{ photoSelected?.isActive ? 'Activo' : 'Inactivo' }}</p>
+      
+      <!-- Mostrar la foto -->
+      <img [src]="photoSelected?.url" />
+    
+      <!-- Botón para entrar en modo edición -->
+      <button (click)="editPhoto()">Editar</button>
+    </ng-template>
+  </div>
+  

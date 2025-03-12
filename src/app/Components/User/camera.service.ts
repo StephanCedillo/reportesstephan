@@ -69,7 +69,7 @@ export class CameraService {
       quality: 90,
       allowEditing: false,
       resultType: CameraResultType.Uri,
-      source: CameraSource.Photos
+      source: CameraSource.Camera, // Cambié a CameraSource.Camera para capturar desde la cámara en lugar de la galería
     });
 
     const imageUrl = image.webPath;

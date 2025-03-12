@@ -1,7 +1,9 @@
 <div class="lookbook-gallery">
     <h2 class="look-hed">Reportes de la empresa </h2>
     <div class="lookbook-grid" role="region">
+      
       <figure class="model" *ngFor="let photo of filteredPhotos">
+        <a [routerLink]="['/photo', photo.id]" class="flower-item"></a>
         <img [src]="photo.url" alt="Foto" />
         <figcaption class="model--caption">
           <table class="zigzag">
@@ -20,7 +22,7 @@
           </p>
           
           <div class="button-group">
-            <button class="details-btn">Ver detalles</button>
+            <a [routerLink]="['/user/photo', photo.id]"  class="details-btn">Ver detalles</a>
             <button class="delete-btn" (click)="deletePhoto(photo.id)">Eliminar</button>
           </div>
         </figcaption>

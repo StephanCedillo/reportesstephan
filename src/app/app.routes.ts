@@ -8,6 +8,7 @@ import { GaleriaComponent } from './Components/User/galeria/galeria.component';
 import { CrearIComponent } from './Components/User/crear-i/crear-i.component';
 import { FiltrosComponent } from './Components/User/filtros/filtros.component';
 import { DescargarPDFComponent } from './Components/User/descargar-pdf/descargar-pdf.component';
+import { PhotoDetailComponent } from './Components/User/Photo/photo-detail/photo-detail.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,6 +16,7 @@ export const routes: Routes = [
   { path: 'user', component: PanelComponent,
     children: [{path: 'galeria', component: GaleriaComponent},
     { path: 'crear-i', component: CrearIComponent},
+    { path: 'photo/:id', component: PhotoDetailComponent},
     { path: 'filtros', component: FiltrosComponent},
     { path: 'descargar-pdf', component: DescargarPDFComponent},
   ]},
